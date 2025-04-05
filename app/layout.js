@@ -24,6 +24,11 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar/>
+        <img src="https://yt3.googleusercontent.com/YNhVdBnQ1qd1tgPflKFjMPg6CvuXThwqchjoy7n1inwwchZzt__tbYHjfspoffo-_soUgiqt=w1138-fcrop64=1,00005a57ffffa5a8-k-c0xffffffff-no-nd-rj"
+        height={100}
+        width={100}
+        className="h-full w-full "
+        />
         {children}
       </body>
     </html>
