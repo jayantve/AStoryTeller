@@ -1,52 +1,57 @@
+import React from 'react';
+
+const stats = [
+    { 
+        id: 1, 
+        name: 'Video 1', 
+        value: '2.4K', 
+        youtubeId: 'fTB3vHqlWeg?si=hM-ZYg-U_vHJZ4AH' ,
+    },
+    { 
+        id: 2, 
+        name: 'Video 2', 
+        value: '17', 
+        youtubeId: 'y-xu6tkMTto?si=u02Y81oA_gKUiYgq',
+    }, 
+    { 
+        id: 3, 
+        name: 'Video 3', 
+        value: '41', 
+        youtubeId: 'MMwPo3JDLzc?si=yZvrSi5VtgdS-l3-' ,
+    }, 
+    { 
+        id: 4, 
+        name: 'Video 4', 
+        value: '324', 
+        youtubeId: 'JmffSpB0QoE?si=tiHPYNmxe51Np6fc' ,
+    },
+];
+
 const Section2 = () => {
     return (
-        <div>
-            <section className="text-gray-600 body-font">
-                <div className="container px-5 py-24 mx-auto">
-                    <div className="flex flex-wrap w-full mb-20">
-                        <div className="lg:w-1/2 w-full mb-6 lg:mb-0">
-                            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Pitchfork Kickstarter Taxidermy</h1>
-                            <div className="h-1 w-25 bg-indigo-500 rounded"></div>
-                        </div>
-                    </div>
-                    <div className="flex flex-wrap -m-4">
-                        <div className="xl:w-1/2 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg">
-                                <iframe width="560" height="315" src="https://www.youtube.com/embed/MMwPo3JDLzc?si=BxJ1wBulFPdcr1_e" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Chichen Itza</h2>
-                                <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
+        <div className="bg-grey-900 py-6 sm:py-8">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-2 sm:gap-3">
+                    {stats.map((stat) => (
+                        <div key={stat.id} className="text-center py-4 px-3 rounded-lg bg-gray-50">
+                            <div className="aspect-w-16 aspect-h-16 w-full mb-4 bg-grey-200">
+                                <iframe
+                                    className="w-full h-full rounded-lg"
+                                    src={`https://www.youtube.com/embed/${stat.youtubeId}`}
+                                    title="YouTube video player"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    referrerPolicy="strict-origin-when-cross-origin"
+                                    allowFullScreen
+                                />
                             </div>
+                            <p className="text-lg font-semibold text-gray-900">{stat.name}</p>
+                            <p className="text-2xl font-bold text-blue-600">{stat.value}</p>
                         </div>
-                        <div className="xl:w-1/2 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg">
-                                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/721x401" alt="content" />
-                                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Colosseum Roma</h2>
-                                <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                            </div>
-                        </div>
-                        <div className="xl:w-1/4 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg">
-                                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/722x402" alt="content" />
-                                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">Great Pyramid of Giza</h2>
-                                <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                            </div>
-                        </div>
-                        <div className="xl:w-1/4 md:w-1/2 p-4">
-                            <div className="bg-gray-100 p-6 rounded-lg">
-                                <img className="h-40 rounded w-full object-cover object-center mb-6" src="https://dummyimage.com/723x403" alt="content" />
-                                <h3 className="tracking-widest text-indigo-500 text-xs font-medium title-font">SUBTITLE</h3>
-                                <h2 className="text-lg text-gray-900 font-medium title-font mb-4">San Francisco</h2>
-                                <p className="leading-relaxed text-base">Fingerstache flexitarian street art 8-bit waistcoat. Distillery hexagon disrupt edison bulbche.</p>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
-            </section>
+            </div>
         </div>
-    )
-}
+    );
+};
 
-export default Section2 ;
+export default Section2;
