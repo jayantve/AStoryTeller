@@ -27,12 +27,6 @@ const Navbar = () => {
             <a href="/Video" className="mr-4 md:mr-5 hover:text-gray-900">
               Videos
             </a>
-            <a href="/Songs" className="mr-4 md:mr-5 hover:text-gray-900">
-              Songs
-            </a>
-            <a href="/Posts" className="hover:text-gray-900">
-              Posts
-            </a>
           </nav>
         </div>
       </header>

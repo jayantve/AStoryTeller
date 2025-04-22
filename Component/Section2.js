@@ -1,37 +1,23 @@
 import React from 'react';
+import Data from '@/Component/Data'
 
-const posts = [
-  {
-    id: 1,
-    title: 'Cricket',
-    href: '#',
-    description: 'Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur nulla deserunt vel iusto corrupti dicta laboris incididunt.',
-    date: 'Mar 16, 2020',
-    YoutubeId: 'https://www.youtube.com/embed/y-xu6tkMTto?si=0Ncyu840-T2RLRPd'
-  },
-  {
-    id: 2,
-    title: 'Jokes by goatie and bunny',
-    href: '#',
-    description: 'A comprehensive guide on getting started with Radix UI and integrating it into your projects.',
-    date: 'Jan 10, 2024',
-    YoutubeId: 'https://www.youtube.com/embed/MMwPo3JDLzc?si=jC2FOj1XevYi_5md'
-  },
-  {
-    id: 3,
-    title: 'Dosti ka yeh Bandhan',
-    href: '#',
-    description: 'Explore the new features and performance improvements in Next.js 14.',
-    date: 'Dec 15, 2023',
-    YoutubeId: "https://www.youtube.com/embed/AqMppW_lIk8?si=fsbOrBKNa4CTglZ-"
-  },
-];
+const posts = Data
 
 const PostCard = ({ post }) => {
   return (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transition-shadow duration-200 hover:shadow-lg flex flex-col md:flex-row">
-      <div className="relative md:w-1/3">
-        <iframe className='w-full h-48 object-cover' width="560" height="315" src={post.YoutubeId} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+     <div className="relative md:w-1/3">
+        <iframe
+          className='w-full h-48 object-cover'
+          width="560"
+          height="315"
+          src={`https://www.youtube.com/embed/${post.YoutubeId}`} // Corrected line
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        >
+        </iframe>
       </div>
       <div className="p-6 md:w-2/3">
         <h2 className="text-xl font-semibold text-gray-900 mb-2">
@@ -54,7 +40,7 @@ const Section2 = () => {
     <div className="bg-gray-100 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-gray-900 text-center mb-8">
-          Our Latest Articles
+          Videos
         </h1>
         <div className="grid grid-cols-1 gap-8">
           {posts.map((post) => (
