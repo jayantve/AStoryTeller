@@ -1,36 +1,156 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pandas Module
 
-## Getting Started
+#### Pandas is a core Python library for data analysis, offering efficient data structures like Series and DataFrame for tabular data.
 
-First, run the development server:
+## Installation
+
+#### Use the package manager `pip`  to install foobar.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+pip install pandas
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Core Data Structures
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Series
+#### 1D labeled array.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```python
+# imports
+import pandas as pd
 
-## Learn More
+# Creating a Series
+s = pd.Series([1, 3, 5], index=['a', 'b', 'c'])
 
-To learn more about Next.js, take a look at the following resources:
+# Printing
+print(s)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Data Frame
+#### 2D labeled table with columns of different types.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```python
+# imports
+import pandas as pd
 
-## Deploy on Vercel
+# Creating Data
+data = { 'Name': ['Alice', 'Bob'], 
+          'Age': [25, 30]
+       }
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Creating  DataFrame 
+df = pd.DataFrame(data)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Printing
+print(df)
+```
+
+## Basic Operations
+
+### Reading and Writing Data
+#### Handles CSV(Comma Seperated Value), Excel, etc.
+
+```python
+# imports
+import pandas as pd
+
+df = pd.DataFrame({'P': ['A', 'B'], 'Pr': [100, 150]})
+
+# Creating csv 
+df.to_csv('sample.csv', index=False)
+
+# Reading Data from csv
+df_from_csv = pd.read_csv('sample.csv')
+
+# Printing
+print(df_from_csv)
+ ```
+
+### Viewing Data
+#### Inspect DataFrame contents.
+
+```python
+# imports
+import pandas as pd
+import numpy as np
+
+# Creating Data
+df = pd.DataFrame(np.random.rand(5, 3))
+
+# Printing 
+print(df.head(2))
+print(df.describe())
+```
+
+### Selection and Indexing
+#### Access data by label `.loc[]`, position `.iloc[]`, or condition.
+
+``` python
+# imports 
+import pandas as pd
+
+# Creating Data Frame
+df = pd.DataFrame(
+ {'N': ['A', 'B'],
+ 'Ag': [25, 30]},
+ index=['P1', 'P2'])
+
+# Printing
+print(df['N'])
+print(df.loc['P1'])
+print(df[df['Ag'] > 25])
+```
+
+### Handling Missing Data
+#### Drop or fill NaN values.
+
+```python
+# imports 
+import pandas as pd
+import numpy as np
+
+# Creating a Data Frame
+df = pd.DataFrame({'A': [1, np.nan, 3]})
+
+# Printing 
+print(df.dropna())
+print(df.fillna(0))
+```
+
+### Group By
+#### Aggregate data based on categories.
+
+```python
+# imports
+import pandas as pd 
+
+# Creating DataFrame
+df = pd.dataFrame({'D':['S','H'],'Sal':[60000,50000]})
+
+# Printing
+print(df.groupby('D')['Sal'].mean())
+```
+
+
+### Merging & Concatenating
+#### Combine DataFrames (merge for joins, concat for stacking).
+
+```python
+# imports
+import pandas as pd
+
+# Creating DataFrame 1 for Merging
+df1 = pd.DataFrame({ 'k': ['K0'],'A': ['A0']})
+
+# Creating DataFrame 2 for Merging
+df1 = pd.DataFrame({ 'k': ['K0'],'B': ['B0']})
+
+# Creating merged DataFrame
+merged_df = pd.merge(df1, df2, on='k')
+
+# Printing
+print(df)
+```
+
+### Conclusion
+#### Pandas is crucial for data manipulation in Python. This README.md provides a concise overview.
